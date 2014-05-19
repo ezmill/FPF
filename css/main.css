@@ -66,23 +66,48 @@ textarea {
    ========================================================================== */
 
 
-
+body{
+    font-family:'Museo Sans W01 ';
+}
 
 .cover{
-  background-image: url("../../img/cityscape.jpg"); 
-  height: 600px  ;
+  background-image: url("../img/cityscape.jpg"); 
+  height: 450px  ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: 0% 50%;
+  background-position: 0% 80%;
+   position: relative; 
+}
+
+h1 span { 
+    position:relative;
+    z-index:1;
+}
+
+.title{
+    color: white;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 100%;
+  }
+.title-wrapper{
+    /*z-index: 1;*/
+      background-color: rgba(0,0,0,0.0);
 }
 
 
+#nav{
 
+}
 
-
-
+#nav-list{
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+}
 
 
 
@@ -214,8 +239,25 @@ textarea[contenteditable] {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 800px) {
+@media only screen and (max-width: 800px) {
     /* Style adjustments for viewports that meet the condition */
+    .cover{
+      background-image: url("../img/cityscape.jpg"); 
+      height: 300px  ;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: -20% 80%;
+    }
+    .title{
+    color: white;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 100%;
+    text-shadow:1px 1px 10px #000;
+    }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
