@@ -68,7 +68,15 @@ textarea {
 
 
 
-
+.cover{
+  background-image: url("../../img/cityscape.jpg"); 
+  height: 600px  ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0% 50%;
+}
 
 
 
