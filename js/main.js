@@ -1,8 +1,8 @@
 (function(){
 	var app = angular.module("fpf",[]);
-	app.controller("BlogController",function(){
-		this.entries = entries;
-	});
+	// app.controller("BlogController",function(){
+	// 	this.entries = entries;
+	// });
 	app.controller("WorksController",function(){
 		this.books = works;
 	});
