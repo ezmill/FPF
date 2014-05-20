@@ -78,15 +78,18 @@
             {{postCtrl.post.title}}
             {{postCtrl.post.content}}
         </form>
-        <div ng-controller="BlogController as blog" style="width:100%;height:100%">
-            <div class="post" ng-repeat="entry in blog.entries | orderBy:'date'" >            <!-- ng-include="'post-format.html'" -->
+        <!-- <div ng-controller="BlogController as blog" style="width:100%;height:100%"> -->
+        <blog>
+           <post></post>
+        </blog>
+            <!-- <div class="post" ng-repeat="entry in blog.entries | orderBy:'date'" >           ng-include="'post-format.html'" --> 
 <!--                 <h1>{{entry.title}}</h1>
                 <h4>{{entry.date | date:'MM/dd/yyyy @ h:mma'}}</h4>
                 <p>{{entry.content}}</p> -->
 <!--                 <button ng-show="!entry.hasContent">Post</button> -->  
-                  <post></post>
-            </div>
-        </div>
+                  <!-- <post></post> -->
+            <!-- </div> -->
+        <!-- </div> -->
         <div ng-controller="WorksController as work" >
             <div ng-repeat="book in work.books">
 

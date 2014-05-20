@@ -18,8 +18,19 @@
 	});
 	app.directive("post",function(){
 		return{
-			restrict: 'E',
+			restrict: 'E',  //A for attribute, E for element
 			templateUrl: "post-format.html"
+		};
+	});
+
+	app.directive("blog",function(){
+		return{
+			restrict: 'E',  //A for attribute, E for element
+			templateUrl: "blog-format.html",
+			controller: function(){
+				this.entries = entries;
+			},
+			controllerAs: "blog"
 		};
 	});
 
