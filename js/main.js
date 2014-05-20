@@ -12,8 +12,17 @@
 			this.post.date = Date.now();
 			entries.push(this.post);
 			this.post = {};
+			//TODO 
+			//Add Class Color Removal
 		}
 	});
+	app.directive("post",function(){
+		return{
+			restrict: 'E',
+			templateUrl: "post-format.html"
+		};
+	});
+
 
 	function Post(title,date){
 		this.title = title;
