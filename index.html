@@ -52,31 +52,44 @@
             <nav id="nav">
                 <ul id="nav-list">
                     <li>
-                        About
-                    </li>
+                        <a href="#" ng-click="page = 'about'">About</a>
+                        </li>
 
-                    <li>
-                        Works
-                    </li>
-                    <li>
-                        Blog
-                    </li>
-                    <li>
-                        Contact
-                    </li>
+                        <li>
+                        <a href="#" ng-click="page = 'works'">Works</a>
+                        </li>
+                        <li>
+                        <a href="#" ng-click="page = 'blog'">Blog</a>
+                        </li>
+                        <li>
+                       <a href="#" ng-click="page = 'contact'">Contact</a> 
+                        </li>
                 </ul>
             </nav>
         </div>
+        {{page}}
         <div ng-view>
         </div>
-        <div ng-controller="BlogController as blog">
-            <div ng-repeat="post in blog.posts | orderBy:'date'">            
-                <h1>{{post.title}}</h1>
-                <h2>{{post.date | date:'MM/dd/yyyy @ h:mma'}}</h2>
-                <p>{{post.content}}</p>
-                <button ng-show="post.hasContent">Post</button>
+        <form name="postForm" ng-controller="PostController as postCtrl" ng-submit="postForm.$valid && postCtrl.addPost()" novalidate>
+            <label>Post Title:</label>
+            <input ng-model="postCtrl.post.title" type="text"/ required>
+            <textarea ng-model="postCtrl.post.content" required></textarea>
+            <input type="submit" value="Post">
+            {{postCtrl.post.title}}
+            {{postCtrl.post.content}}
+        </form>
+        <div ng-controller="BlogController as blog" style="width:100%;height:100%">
+            <div class="post" ng-repeat="entry in blog.entries | orderBy:'date'" ng-include="'post-format.html'">            
+<!--                 <h1>{{entry.title}}</h1>
+                <h4>{{entry.date | date:'MM/dd/yyyy @ h:mma'}}</h4>
+                <p>{{entry.content}}</p> -->
+<!--                 <button ng-show="!entry.hasContent">Post</button> -->            
             </div>
+        </div>
+        <div ng-controller="WorksController as work" >
+            <div ng-repeat="book in work.books">
 
+            </div>
         </div>
         <script src="js/vendor/zepto.min.js"></script>
         <script src="js/vendor/angular.min.js"></script>
