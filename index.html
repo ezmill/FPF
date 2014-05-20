@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
-<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> 
+<html class="no-js" ng-app="fpf"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <title></title>
@@ -66,8 +67,21 @@
                 </ul>
             </nav>
         </div>
+        <div ng-view>
+        </div>
+        <div ng-controller="BlogController as blog">
+            <div ng-repeat="post in blog.posts | orderBy:'date'">            
+                <h1>{{post.title}}</h1>
+                <h2>{{post.date | date:'MM/dd/yyyy @ h:mma'}}</h2>
+                <p>{{post.content}}</p>
+                <button ng-show="post.hasContent">Post</button>
+            </div>
+
+        </div>
         <script src="js/vendor/zepto.min.js"></script>
+        <script src="js/vendor/angular.min.js"></script>
         <script src="js/helper.js"></script>
+        <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
